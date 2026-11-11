@@ -56,7 +56,7 @@
     (async() => {
       console.log("Cargando modelo...");
       try {
-        modelo = await tf.loadLayersModel("model.json");
+        modelo = await tf.loadLayersModel(new URL("model.json", window.location.href).href);
         console.log("Modelo cargado");
         document.getElementById("estado").textContent = "Modelo cargado. Apunta la cámara a un perro o un gato.";
       } catch (error) {
